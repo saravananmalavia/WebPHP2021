@@ -1,4 +1,6 @@
 // this class is used to estabilish connection with MYSQL
+//@author Saravanan 
+
 <?php
 class DBConnection{
 	
