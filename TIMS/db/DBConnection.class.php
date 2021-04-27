@@ -1,3 +1,4 @@
+// this class is used to estabilish connection with MYSQL
 <?php
 class DBConnection{
 	
@@ -7,9 +8,7 @@ class DBConnection{
 	public static $dbase = "KeltronDB";
 
 	static function  getConnect(){
-
 		$connection = new mysqli(self::$servername, self::$username, self::$password,self::$dbase );
-		echo "Connection ok";
 		return $connection;
 	}
 
@@ -22,7 +21,7 @@ class DBConnection{
 				}
 			else{
 
-					if($conn->query($sql) == TRUE ){
+					if($conn->query($sql) === TRUE ){
 						$result = $conn->affected_rows ;
 						$conn->close();
 					}
