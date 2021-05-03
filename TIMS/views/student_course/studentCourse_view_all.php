@@ -1,8 +1,8 @@
 <?php
 session_start();
-    require_once '../../student_course/studentCourse.class.php';
-    
-    require_once '../../student_course/studentCourseService.php';
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../module/studentCourse.class.php' );    
+    require_once( ROOT_DIR.'/../service/studentCourseService.php' );
 if(isset($_SESSION["message"])){
     $message = $_SESSION["message"];
     unset($_SESSION["message"]);

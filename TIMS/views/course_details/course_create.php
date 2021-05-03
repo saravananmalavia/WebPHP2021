@@ -4,8 +4,8 @@ echo getcwd();
     //require_once '../../course/Course.class.php';
     //require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../course/course.class.php' );    
-    require_once( ROOT_DIR.'/../course/course.service.php' );
+    require_once( ROOT_DIR.'/../module/course.class.php' );    
+    require_once( ROOT_DIR.'/../service/course.service.php' );
 
 $message ="";
 $errCourse_id = $errCourse_code = $errCourse_name = $errSyllabus = $errDuration = $errFees = "";

@@ -1,5 +1,5 @@
 <?php
-require_once 'studentCourse.class.php';
+require_once '../model/studentCourse.class.php';
 require_once '../../db/DBConnection.class.php';
 
 

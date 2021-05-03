@@ -1,7 +1,8 @@
 <?php
 session_start();
-    require_once '../../student_course/studentCourse.class.php';
-    require_once '../../student_course/studentCourseService.php';
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../module/studentCourse.class.php' );    
+    require_once( ROOT_DIR.'/../service/studentCourseService.php' );
 
 $message ="";
 $errStudent_course_id = $errStudent_id = $errCourse_code = $errCourse_id = $errStart_date = $errEnd_date = "";
