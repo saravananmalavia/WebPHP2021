@@ -1,11 +1,10 @@
 <?php
 session_start();
-echo getcwd();
     //require_once '../../course/Course.class.php';
     //require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../module/course.class.php' );    
-    require_once( ROOT_DIR.'/../service/course.service.php' );
+    require_once( ROOT_DIR.'/../model/courseClass.php' );    
+    require_once( ROOT_DIR.'/../service/courseService.php' );
 
 $message ="";
 $errCourse_id = $errCourse_code = $errCourse_name = $errSyllabus = $errDuration = $errFees = "";
@@ -140,7 +139,7 @@ if($error == true ){
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once '../../include/menu.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 

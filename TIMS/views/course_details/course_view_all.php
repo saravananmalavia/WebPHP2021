@@ -2,9 +2,9 @@
 session_start();
     //require_once '../../course/Course.class.php';
     //  require_once '../../course/Course.Service.php';
-     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../module/course.class.php' );    
-    require_once( ROOT_DIR.'/../service/course.service.php' );
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../model/courseClass.php' );    
+    require_once( ROOT_DIR.'/../service/courseService.php' );
 if(isset($_SESSION["message"])){
     $message = $_SESSION["message"];
     unset($_SESSION["message"]);
@@ -87,7 +87,7 @@ else{
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once '../../include/menu.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 
@@ -126,7 +126,7 @@ else{
                                 <td><?php echo $row["duration"]; ?></td>
                                 <td><?php echo $row["fees"]; ?></td>
                                 <td><a class="btn-primary" href='course_edit.php?course_id=<?php echo $row["course_id"];  ?>' >Edit</a></td>
-                                <td><a class="btn-danger" href='course_delete.php?course_id=<?php echo $row["course_id"];  ?>' >Delete</a></td>
+                                <td><a class="btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" href='course_delete.php?course_id=<?php echo $row["course_id"];  ?>' >Delete</a></td>
 
                             </tr>
                             <?php

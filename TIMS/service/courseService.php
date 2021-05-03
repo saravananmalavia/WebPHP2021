@@ -1,7 +1,7 @@
 <?php
-    require_once '../config/config.php';
-    require_once( ROOT_DIR.'/../db/sql/DBConnection.class.php' );  
-    require_once( ROOT_DIR.'/../model/Course.class.php' );
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../db/DBConnection.class.php' );  
+    require_once( ROOT_DIR.'/../model/CourseClass.php' );
 
 //require_once 'Course.class.php';
 //require_once '../../db/DBConnection.class.php';

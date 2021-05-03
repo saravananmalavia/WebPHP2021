@@ -1,9 +1,9 @@
-<?php
+ <?php
 session_start();
     // require_once '../../student_course/studentCourse.class.php';
     // require_once '../../student_course/studentCourseService.php';
     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../module/studentCourse.class.php' );    
+    require_once( ROOT_DIR.'/../model/studentCourseClass.php' );    
     require_once( ROOT_DIR.'/../service/studentCourseService.php' );
 
 $message ="";
@@ -132,7 +132,7 @@ if($error == true ){
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once '../../include/menu.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 

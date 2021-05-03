@@ -1,12 +1,12 @@
-// this class is used to estabilish connection with MYSQL
-//@author Saravanan 
+<!-- // this class is used to estabilish connection with MYSQL
+//@author Saravanan  -->
 
 <?php
 class DBConnection{
 	
     public static $servername = "localhost";
 	public static $username = "root";
-	public static $password = "root";
+	public static $password = "";
 	public static $dbase = "KeltronDB";
 
 	static function  getConnect(){

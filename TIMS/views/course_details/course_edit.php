@@ -3,8 +3,8 @@ session_start();
     //require_once '../../course/Course.class.php';
     //require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../module/course.class.php' );    
-    require_once( ROOT_DIR.'/../service/course.service.php' );
+    require_once( ROOT_DIR.'/../model/courseClass.php' );    
+    require_once( ROOT_DIR.'/../service/courseService.php' );
 
 $message ="";
 $errCourse_id = $errCourse_code = $errCourse_name = $errSyllabus = $errDuration = $errFees = "";
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        echo "<br> hi <br>";
        echo "$oldfees fee<br>";
     if ($course_id==$oldcourse_id && $course_code==$oldcourse_code && $course_name==$oldcourse_name && $syllabus==$oldsyllabus && $duration==$oldduration && $fees==$oldfees) {
-        $_SESSION["message"] = "No Changes were Made !";
+        $_SESSION["message"] = "No Changes were Made for Course ID $course_id !";
       }
 
       else{
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // print_r($courseObj);
 
       if($result > 0){
-          $_SESSION["message"] = "Course details updated successfully !";
+          $_SESSION["message"] = "Course details updated successfully for Course ID $course_id !";
         }
         else{
           $_SESSION["message"] = "Server busy please try again later !";
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once '../../include/menu.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 

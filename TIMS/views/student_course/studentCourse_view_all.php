@@ -1,7 +1,7 @@
 <?php
 session_start();
     require_once '../../config/config.php';
-    require_once( ROOT_DIR.'/../module/studentCourse.class.php' );    
+    require_once( ROOT_DIR.'/../model/studentCourseClass.php' );    
     require_once( ROOT_DIR.'/../service/studentCourseService.php' );
 if(isset($_SESSION["message"])){
     $message = $_SESSION["message"];
@@ -86,7 +86,7 @@ else{
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once '../../include/menu.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 
@@ -125,7 +125,7 @@ else{
                                 <td><?php echo $row["start_date"]; ?></td>
                                 <td><?php echo $row["end_date"]; ?></td>
                                 <td><a class="btn-primary" href='studentCourse_edit.php?student_course_id=<?php echo $row["student_course_id"];  ?>' >Edit</a></td>
-                                <td><a class="btn-danger" href='studentCourse_delete.php?student_course_id=<?php echo $row["student_course_id"];  ?>' >Delete</a></td>
+                                <td><a class="btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" href='studentCourse_delete.php?student_course_id=<?php echo $row["student_course_id"];  ?>'  >Delete</a></td>
 
                             </tr>
                             <?php
