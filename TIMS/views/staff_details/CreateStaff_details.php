@@ -1,7 +1,7 @@
 <?php
 session_start();
     require_once 'DBconnectionclass.php';
-    echo"ok";
+   // echo"ok";
     require_once 'staffClass.php';
     echo"class";
     //require_once '../../student/StudentService.php';
