@@ -142,16 +142,6 @@ if($error == true ){
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
 
 
-               <!--Student Course ID -->
-                <!-- <div class="form-group">
-                  <label class="control-label col-sm-2" for="student_course_id"> Student Course ID:</label>
-                  <div class="col-sm-8">          
-                    <input type="text" class="form-control" id="student_course_id" placeholder="Enter the Student Course ID" name="student_course_id" 
-                    value='<?php //echo "$student_course_id" ;?>'
-                    >
-                    <span id="Student_course" style="color:red; font-size: 12px; "><?php //echo "$errStudent_course_id" ;?></span>
-                  </div>
-                </div> -->
 
                 <!-- Student ID -->
                  <div class="form-group">

@@ -1,13 +1,22 @@
 <?php
 session_start();
-require_once 'DBconnectionclass.php';
+//require_once 'DBconnectionclass.php';
+require_once '../../config/config.php';
+require_once( ROOT_DIR.'/../model/examClass.php' );
+require_once( ROOT_DIR.'/../service/examService.php');
 //echo"ok";
     //require_once '../../student/Student.class.php';
-    require_once 'examClass.php';
+    //require_once 'examClass.php';
    // echo"class";
     //require_once '../../student/StudentService.php';
-    require_once 'examService.php';
+    //require_once 'examService.php';
    // echo"service";
+
+
+
+    // require_once '../../config/config.php';
+    // require_once( ROOT_DIR.'/../model/courseClass.php' );    
+    // require_once( ROOT_DIR.'/../service/courseService.php' );
 
 $message ="";
 $errSubjectName = $errdate = $errtime = $errremarks

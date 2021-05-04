@@ -58,31 +58,57 @@ if($error == true ){
     $message = "Please fix the errors";
 
 }else{
+       $oldstudent_course_id = $_POST['oldstudent_course_id'];
+       $oldstudent_id = $_POST['oldstudent_id'];
+       $oldcourse_code_id = $_POST['oldcourse_code_id'];
+       $oldcourse_id = $_POST['oldcourse_id'];
+       $oldcourse_code = $_POST['oldcourse_code'];
+       $oldstart_date = $_POST['oldstart_date'];
+       $oldend_date = $_POST['oldend_date'];
+       // echo "-$oldstudent_course_id-<br>";
+       // echo "-$student_course_id-<br>";
+       // echo "-$oldstudent_id-<br>";
+       // echo "-$student_id-<br>";
+       // echo "-$oldcourse_code_id-<br>";
+       // echo "-$course_code_id-<br>";
+       // echo "-$oldcourse_id-<br>";
+       // echo "-$course_id-<br>";
+       // echo "-$oldcourse_code-<br>";
+       // echo "-$course_code-<br>";
+       // echo "-$oldstart_date-<br>";
+       // echo "-$start_date-<br>";
+       // echo "$oldend_date fee<br>";
+       // echo "$end_date fee<br>";
 
-    $studentCourseObj = new StudentCourse();
+    if ($student_course_id==$oldstudent_course_id && $student_id==$oldstudent_id && $course_code_id==$oldcourse_code_id && $course_id==$oldcourse_id && $course_code==$oldcourse_code && $start_date==$oldstart_date && $end_date==$oldend_date) {
+        $_SESSION["message"] = "No Changes were Made for Student Course ID $student_course_id !";
 
-    $studentCourseObj->setStudentCourseID($student_course_id);
-    $studentCourseObj->setStudentID($student_id);
-    $studentCourseObj->setCourseID($course_id);
-    $studentCourseObj->setCourseCode($course_code);
-    $studentCourseObj->setStartDate($start_date);
-    $studentCourseObj->setEndDate($end_date);
+    }else{
 
-    $studentCourseService = new StudentCourseService();
-    $result = $studentCourseService->updateStudentCourse($studentCourseObj);
+        $studentCourseObj = new StudentCourse();
 
-    if($result > 0){
-        $_SESSION["message"] = "Student Course details updated successfully !";
-      }
-      else{
-        $_SESSION["message"] = "Server busy please try again later !";
-      }
+        $studentCourseObj->setStudentCourseID($student_course_id);
+        $studentCourseObj->setStudentID($student_id);
+        $studentCourseObj->setCourseID($course_id);
+        $studentCourseObj->setCourseCode($course_code);
+        $studentCourseObj->setStartDate($start_date);
+        $studentCourseObj->setEndDate($end_date);
+
+        $studentCourseService = new StudentCourseService();
+        $result = $studentCourseService->updateStudentCourse($studentCourseObj);
+
+        if($result > 0){
+            $_SESSION["message"] = "Student Course details updated successfully for Student Course ID $student_course_id !";
+        }
+        else{
+          $_SESSION["message"] = "Server busy please try again later !";
+        }
 
      header("Location: studentCourse_view_all.php");
-
   }
-}
-else{
+  header("Location: studentCourse_view_all.php");
+  }
+}else{
   //echo "i'm in else";
   $student_course_id =$_GET['student_course_id'];
 
@@ -93,12 +119,18 @@ else{
                         $row = $result->fetch_assoc();
                         $student_course_id = $row["student_course_id"];
                         $student_id = $row["student_id"];
-                        // if($course_id===" "||$course_id===null){
                         $course_id = $row["course_id"];
                         $course_code = $row["course_code"];
-                        
                         $start_date = $row["start_date"];
                         $end_date = $row["end_date"];
+                        $oldstudent_course_id = $student_course_id;
+                        $oldstudent_id = $student_id;
+                        $oldcourse_code_id = $course_id.'|'.$course_code;
+                        //echo $oldcourse_code_id;
+                        $oldcourse_id = $course_id;
+                        $oldcourse_code = $course_code;
+                        $oldstart_date = $start_date;
+                        $oldend_date = $end_date;
                       }
                   }
 
@@ -175,6 +207,17 @@ else{
                   </div>
                 </div>
 
+                <!-- old values -->
+                <input type="hidden" id="oldstudent_course_id" name="oldstudent_course_id" value='<?php echo "$oldstudent_course_id"; ?>'>
+                <input type="hidden" id="oldstudent_id" name="oldstudent_id" value='<?php echo "$oldstudent_id"; ?>'>
+                <input type="hidden" id="oldcourse_code_id" name="oldcourse_code_id" value='<?php echo "$oldcourse_code_id"; ?>'>
+                <input type="hidden" id="oldcourse_id" name="oldcourse_id" value='<?php echo "$oldcourse_id"; ?>'>
+                <input type="hidden" id="oldcourse_code" name="oldcourse_code" value='<?php echo "$oldcourse_code"; ?>'>
+                <input type="hidden" id="oldstart_date" name="oldstart_date" value='<?php echo "$oldstart_date"; ?>'>
+                <input type="hidden" id="oldend_date" name="oldend_date" value='<?php echo "$oldend_date"; ?>'>
+
+
+
                 <!-- Student ID -->
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="syllabus">Student ID:</label>
@@ -192,7 +235,7 @@ else{
                             <option value='<?php echo $row["student_id"]; ?>'><?php echo $row["student_id"];  ?>
 
                               <?php if(!empty($student_id)){ ?>
-                                <option selected hidden> <?php echo "$student_id"; ?> </option>
+                                <option selected hidden style="display:none;"> <?php echo "$student_id"; ?> </option>
                               <?php } ?>
                             </option>
 
@@ -217,15 +260,6 @@ else{
                   </div>
                 </div>
 
-              <!-- Course id -->
-                <!-- <div class="form-group">
-                  <label class="control-label col-sm-2" for="course_id">Course ID:</label>
-                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="course_id" placeholder="Enter Course ID" name="course_id"
-                    value='<?php //echo "$course_id" ;?>'>
-                    <span id="courseid" style="color:red; font-size: 12px; "><?php //echo "$errCourse_id" ;?></span>
-                  </div>
-                </div> -->
 
                 <!-- Course code -->
                 <div class="form-group">
@@ -246,7 +280,7 @@ else{
                             <option value="<?php echo  $row["course_id"]."|".$row["course_code"]; ?>"><?php echo $row["course_id"]." | ".$row["course_code"]; ?>
 
                               <?php if(!empty($course_code)){ ?>
-                                <option selected hidden> <?php echo "$course_id | $course_code"; ?> </option>
+                                <option selected style="display:none;" value="<?php echo  "$course_id"."|"."$course_code"; ?>"> <?php echo "$course_id | $course_code"; ?> </option>
                               <?php } ?>
                             </option>
 

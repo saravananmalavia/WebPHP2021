@@ -148,16 +148,6 @@ if($error == true ){
                 <p style="color:red;" > <?php echo $message; ?></p>
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
 
-              <!-- Course id -->
-               <!--  <div class="form-group">
-                  <label class="control-label col-sm-2" for="course_id">Course ID:</label>
-                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="course_id" placeholder="Enter Course ID" name="course_id"
-                    value='<?php //echo "$course_id" ;?>'>
-                    <span id="courseid" style="color:red; font-size: 12px; "><?php //echo "$errCourse_id" ;?></span>
-                  </div>
-                </div> -->
-
                 <!-- Course code -->
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="course_code">Course Code:</label>

@@ -65,14 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $oldsyllabus=$_POST['oldsyllabus'];
        $oldduration=$_POST['oldduration'];
        $oldfees=$_POST['oldfees'];
-       echo "-$oldcourse_name-";
-       echo "<br> hi <br>";
-       echo "$oldfees fee<br>";
+       //echo "-$oldcourse_name-";
+       //echo "<br> hi <br>";
+       //echo "$oldfees fee<br>";
     if ($course_id==$oldcourse_id && $course_code==$oldcourse_code && $course_name==$oldcourse_name && $syllabus==$oldsyllabus && $duration==$oldduration && $fees==$oldfees) {
         $_SESSION["message"] = "No Changes were Made for Course ID $course_id !";
-      }
-
-      else{
+      
+      }else{
 
       $courseObj = new Course();
 
@@ -98,7 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
        header("Location: course_view_all.php");
-
   }
   header("Location: course_view_all.php");
   }
