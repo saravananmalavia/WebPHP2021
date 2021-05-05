@@ -1,6 +1,7 @@
  <?php
-require_once 'staffClass.php';
-require_once 'DBconnectionclass.php';
+require_once '../../config/config.php';
+require_once( ROOT_DIR.'/../db/DBConnection.class.php' );  
+require_once( ROOT_DIR.'/../model/staffClass.php' );
 //require_once '../../db/DBConnection.class.php';
 
 

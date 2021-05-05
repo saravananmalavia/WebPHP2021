@@ -1,12 +1,8 @@
 <?php
 session_start();
-    require_once 'DBconnectionclass.php';
-   // echo"ok";
-    require_once 'staffClass.php';
-    echo"class";
-    //require_once '../../student/StudentService.php';
-    require_once 'staffService.php';
-    echo"service";
+   require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../model/staffClass.php' );    
+    require_once( ROOT_DIR.'/../service/staffService.php' );
 
 $message ="";
 $errStaffName = $errAddress = $errgender = $erremailid = $errmobileno = $errEducation = $errSubject = "";
@@ -159,7 +155,7 @@ if($error == true ){
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once 'menuoop.php' ?>
+                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                    <!--<?php //require_once '../../include/menu.php' ?> -->
                 </ul>
             </td>

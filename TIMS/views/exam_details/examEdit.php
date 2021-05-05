@@ -1,13 +1,9 @@
 <?php
 
 session_start();
-require_once 'DBconnectionclass.php';
-//echo"ok";
-
-require_once 'examClass.php';
-    //require_once '../../student/StudentService.php';
-    require_once 'examService.php';
-
+require_once '../../config/config.php';
+ require_once( ROOT_DIR.'/../model/examClass.php' );    
+ require_once( ROOT_DIR.'/../service/examService.php' );
 
 
 $message ="";
@@ -153,8 +149,7 @@ else{
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once 'menuoop.php' ?>
-                   <!--<?php //require_once '../../include/menu.php' ?> -->
+                    <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
                 </ul>
             </td>
 				 <td style="padding:20px; background-color:#f2f2f2; vertical-align:top;">

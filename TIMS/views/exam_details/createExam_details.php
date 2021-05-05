@@ -133,8 +133,7 @@ if($error == true ){
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once 'menuoop.php' ?>
-                   <!--<?php //require_once '../../include/menu.php' ?> -->
+                  <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>                   <!--<?php //require_once '../../include/menu.php' ?> -->
                 </ul>
             </td>
 
