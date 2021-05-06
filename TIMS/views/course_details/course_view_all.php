@@ -1,7 +1,5 @@
 <?php
 session_start();
-    //require_once '../../course/Course.class.php';
-    //  require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/courseClass.php' );    
     require_once( ROOT_DIR.'/../service/courseService.php' );
@@ -71,9 +69,6 @@ else{
 
         hh {
         font-size: 30px;
-        /*margin-right: 55%;*/
-        /*padding-right: 300px;*/
-        /*left: 60%;*/
         }
 </style>
 <body style="margin:0px;">
@@ -115,6 +110,7 @@ else{
                  $result = $courseService->getCourses();
                  if($result != null){
                      if ($result->num_rows > 0) {
+                      
                        // output data of each row
                        while($row = $result->fetch_assoc()) {
                             ?>

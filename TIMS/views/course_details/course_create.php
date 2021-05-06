@@ -1,7 +1,5 @@
 <?php
 session_start();
-    //require_once '../../course/Course.class.php';
-    //require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/courseClass.php' );    
     require_once( ROOT_DIR.'/../service/courseService.php' );
@@ -14,20 +12,13 @@ $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//$course_id = $_POST['course_id'];
 $course_code = $_POST['course_code'];
 $course_name = $_POST['course_name'];
 $syllabus = $_POST['syllabus'];
-// echo htmlspecialchars($_POST['syllabus']);
 $duration = $_POST['duration'];
 $fees = $_POST['fees'];
 
 
-// if (filter_var($course_id, FILTER_VALIDATE_INT)) {} 
-// else {
-//     $errCourse_id = "* Course ID should not be empty";
-//     $error = true;
-// }
 if(empty($course_code)){
     $errCourse_code = "* Course Code should not be empty";
     $error = true;
@@ -71,7 +62,6 @@ if($error == true ){
     $courseObj->setSyllabus($syllabus);
     $courseObj->setDuration($duration);
     $courseObj->setFees($fees);
-
     $courseService = new CourseService();
     $result = $courseService->addCourse($courseObj);
 
@@ -85,10 +75,6 @@ if($error == true ){
      header("Location: course_view_all.php");
 
   }
-
-
-
-
 
 }
 ?>

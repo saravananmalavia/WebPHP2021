@@ -1,7 +1,5 @@
  <?php
 session_start();
-    // require_once '../../student_course/studentCourse.class.php';
-    // require_once '../../student_course/studentCourseService.php';
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/studentCourseClass.php' );    
     require_once( ROOT_DIR.'/../service/studentCourseService.php' );
@@ -14,15 +12,10 @@ $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//$student_course_id = $_POST['student_course_id'];
 $student_id = $_POST['student_id'];
-
 $course_code_id = $_POST['course_code_id'];
-//echo "-$student_id-<br>";
-//echo "-$course_code_id-<br>";
 $c_explode = explode('|', $course_code_id);
 $course_id = $c_explode[0];
-//echo "-$course_id-";
 $course_code = $c_explode[1];
 $start_date = $_POST['start_date'];
 $end_date = $_POST['end_date'];
@@ -59,7 +52,6 @@ if($error == true ){
 }else{
 
     $studentCourseObj = new StudentCourse();
-
     $studentCourseObj->setStudentCourseID($student_course_id);
     $studentCourseObj->setStudentID($student_id);
     $studentCourseObj->setCourseID($course_id);
@@ -80,11 +72,6 @@ if($error == true ){
      header("Location: studentCourse_view_all.php");
 
   }
-
-
-
-
-
 }
 ?>
 
@@ -169,17 +156,14 @@ if($error == true ){
                           if(!empty($student_id)){ ?>
                           <option  selected hidden style="display:none;"> <?php echo "$student_id"; ?> </option>
                            <?php 
-                           }//else {
-                              ?>    
-                              <!-- <option value="" disabled> No Records Found !</option> --> 
-                              <?php
-                           //}   
-                          }else{
-                              ?>
-                              <option value="" disabled> Server busy try again later !</option>
-                          <?php
-                             }
-                          ?> 
+                           }
+                         
+                    }else{
+                        ?>
+                        <option value="" disabled> Server busy try again later !</option>
+                    <?php
+                       }
+                    ?> 
                             
                     </select>
 
@@ -193,17 +177,15 @@ if($error == true ){
                  </div>
                 </div>
 
-
-
-
                 <!-- Course code -->
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="course_code">Course Code:</label>
                   <div class="col-sm-8">
                     <select id="course_code_id"class="form-control" name='course_code_id' required="true">
 
-                     <option value="" disabled selected hidden>Select the Course Code</option>
-                     <?php
+                     <option value="" disabled selected hidden>Select the Course Code
+                     </option>
+                  <?php
                  $studentCourseService = new StudentCourseService();
                  $result = $studentCourseService->getCourseID1();
 
@@ -221,25 +203,20 @@ if($error == true ){
                         ?>
                       <option selected style="display:none;" value="<?php echo  "$course_id"."|"."$course_code"; ?>"> <?php echo "$course_id | $course_code"; ?> </option>
                       <?php
-                       } else {
-                          ?>    
-                          <option value="" disabled> No Records Found !</option> 
-                          <?php
-                        }   
+                       }   
                 }else{
                     ?>
                     <option value="" disabled> Server busy try again later !</option>
                 <?php
                    }
-                ?> 
-                  
+                ?>                  
                     </select>
                     <script>
                       $("#course_code_id").chosen();
                     </script>
                      
-                    <span id="Studentid" style="color:red; font-size: 12px;
-                                                 "><?php echo "$errCourse_code" ;?></span>
+                    <span id="Studentid" style="color:red; font-size: 12px;"> <?php echo "$errCourse_code" ;?> 
+                    </span>
                   </div>
                 </div>
 
@@ -248,8 +225,8 @@ if($error == true ){
                   <label class="control-label col-sm-2" for="duration">Start Date:</label>
                   <div class="col-sm-8">          
                     <input type="date" class="form-control" id="start_date" placeholder="Enter the Start Date" name="start_date" value='<?php echo "$start_date" ;?>'>
-                    <span id="errStart_date" style="color:red; font-size: 12px;
-                                                 "><?php echo "$errStart_date" ;?></span>
+                    <span id="errStart_date" style="color:red; font-size: 12px;"> <?php echo "$errStart_date" ;?> 
+                    </span>
                   </div>
                 </div>
 
@@ -258,8 +235,8 @@ if($error == true ){
                   <label class="control-label col-sm-2" for="fees">End Date:</label>
                   <div class="col-sm-8">          
                     <input type="date" class="form-control" id="end_date" placeholder="Enter the Fee" name="end_date" value='<?php echo "$end_date" ;?>'>
-                    <span id="errEnd_date" style="color:red; font-size: 12px;
-                                                 "><?php echo "$errEnd_date" ;?></span>
+                    <span id="errEnd_date" style="color:red; font-size: 12px;"> <?php echo "$errEnd_date" ;?>
+                    </span>
                   </div>
                 </div>
 
@@ -275,8 +252,6 @@ if($error == true ){
 
         </tr>
      
-             
-
         </tr>
         <tr>
             <td colspan="3" style="padding:5px; background-color:#acb3b9; text-align:center;">

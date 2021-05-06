@@ -11,14 +11,10 @@ $student_course_id = $student_id = $course_id = $course_code_id = $course_code =
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-//echo"i'm in post<br>";
-
 $student_course_id = $_POST['student_course_id'];
 $student_id = $_POST['student_id'];
 $course_code = $course_id = NULL;
 $course_code_id = $_POST['course_code_id'];
-//echo "$course_code_id";
 $a_explode = explode('|', $course_code_id);
 $course_id = $a_explode[0];
 $course_code = $a_explode[1];
@@ -57,7 +53,7 @@ if (empty($end_date)) {
 if($error == true ){
     $message = "Please fix the errors";
 
-}else{
+}else{ //Comparing old and new values
        $oldstudent_course_id = $_POST['oldstudent_course_id'];
        $oldstudent_id = $_POST['oldstudent_id'];
        $oldcourse_code_id = $_POST['oldcourse_code_id'];
@@ -65,20 +61,6 @@ if($error == true ){
        $oldcourse_code = $_POST['oldcourse_code'];
        $oldstart_date = $_POST['oldstart_date'];
        $oldend_date = $_POST['oldend_date'];
-       // echo "-$oldstudent_course_id-<br>";
-       // echo "-$student_course_id-<br>";
-       // echo "-$oldstudent_id-<br>";
-       // echo "-$student_id-<br>";
-       // echo "-$oldcourse_code_id-<br>";
-       // echo "-$course_code_id-<br>";
-       // echo "-$oldcourse_id-<br>";
-       // echo "-$course_id-<br>";
-       // echo "-$oldcourse_code-<br>";
-       // echo "-$course_code-<br>";
-       // echo "-$oldstart_date-<br>";
-       // echo "-$start_date-<br>";
-       // echo "$oldend_date fee<br>";
-       // echo "$end_date fee<br>";
 
     if ($student_course_id==$oldstudent_course_id && $student_id==$oldstudent_id && $course_code_id==$oldcourse_code_id && $course_id==$oldcourse_id && $course_code==$oldcourse_code && $start_date==$oldstart_date && $end_date==$oldend_date) {
         $_SESSION["message"] = "No Changes were Made for Student Course ID $student_course_id !";
@@ -109,7 +91,6 @@ if($error == true ){
   header("Location: studentCourse_view_all.php");
   }
 }else{
-  //echo "i'm in else";
   $student_course_id =$_GET['student_course_id'];
 
   $studentCourseService1 = new StudentCourseService();
@@ -126,7 +107,6 @@ if($error == true ){
                         $oldstudent_course_id = $student_course_id;
                         $oldstudent_id = $student_id;
                         $oldcourse_code_id = $course_id.'|'.$course_code;
-                        //echo $oldcourse_code_id;
                         $oldcourse_id = $course_id;
                         $oldcourse_code = $course_code;
                         $oldstart_date = $start_date;
@@ -139,7 +119,6 @@ if($error == true ){
 
 }
 ?>
-<!-- <H1><?php //echo "|$course_id|";?></H1> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -195,7 +174,6 @@ if($error == true ){
                 <p style="color:red;" > <?php echo $message; ?></p>
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
 
-
                <!--Student Course ID -->
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="student_course_id"> Student Course ID:</label>
@@ -215,8 +193,6 @@ if($error == true ){
                 <input type="hidden" id="oldcourse_code" name="oldcourse_code" value='<?php echo "$oldcourse_code"; ?>'>
                 <input type="hidden" id="oldstart_date" name="oldstart_date" value='<?php echo "$oldstart_date"; ?>'>
                 <input type="hidden" id="oldend_date" name="oldend_date" value='<?php echo "$oldend_date"; ?>'>
-
-
 
                 <!-- Student ID -->
                  <div class="form-group">
@@ -255,11 +231,10 @@ if($error == true ){
                             
                     </select>
                      
-                    <span id="Studentid" style="color:red; font-size: 12px;
-                                                 "><?php echo "$errStudent_id" ;?></span>
+                    <span id="Studentid" style="color:red; font-size: 12px;"><?php echo "$errStudent_id" ;?>
+                    </span>
                   </div>
                 </div>
-
 
                 <!-- Course code -->
                 <div class="form-group">
@@ -336,15 +311,12 @@ if($error == true ){
             </td>
 
         </tr>
-     
-             
-
-        </tr>
-        <tr>
-            <td colspan="3" style="padding:5px; background-color:#acb3b9; text-align:center;">
-                <p>copyright &copy; <?php echo date("Y"); ?> keltron knowledge center</p>
-            </td>
-        </tr>
+       </tr>
+      <tr>
+          <td colspan="3" style="padding:5px; background-color:#acb3b9; text-align:center;">
+              <p>copyright &copy; <?php echo date("Y"); ?> keltron knowledge center</p>
+          </td>
+      </tr>
     </table>
 </body>
 </html>

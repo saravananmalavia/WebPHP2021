@@ -1,7 +1,5 @@
 <?php
 session_start();
-    //require_once '../../course/Course.class.php';
-    //require_once '../../course/Course.Service.php';
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/courseClass.php' );    
     require_once( ROOT_DIR.'/../service/courseService.php' );
@@ -18,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $course_code = $_POST['course_code'];
   $course_name = $_POST['course_name'];
   $syllabus = $_POST['syllabus'];
-  // echo htmlspecialchars($_POST['syllabus']);
   $duration = $_POST['duration'];
   $fees = $_POST['fees'];
 
@@ -58,16 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if($error == true ){
       $message = "Please fix the errors";
 
-  }else{
+  }else{//Comparing old and new values
        $oldcourse_id=$_POST['oldcourse_id'];
        $oldcourse_code=$_POST['oldcourse_code'];
        $oldcourse_name=$_POST['oldcourse_name'];
        $oldsyllabus=$_POST['oldsyllabus'];
        $oldduration=$_POST['oldduration'];
        $oldfees=$_POST['oldfees'];
-       //echo "-$oldcourse_name-";
-       //echo "<br> hi <br>";
-       //echo "$oldfees fee<br>";
+
     if ($course_id==$oldcourse_id && $course_code==$oldcourse_code && $course_name==$oldcourse_name && $syllabus==$oldsyllabus && $duration==$oldduration && $fees==$oldfees) {
         $_SESSION["message"] = "No Changes were Made for Course ID $course_id !";
       
@@ -82,12 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $courseObj->setDuration($duration);
       $courseObj->setFees($fees);
       
-      
-
       $courseService = new CourseService();
       $result = $courseService->updateCourse($courseObj);
-      
-      // print_r($courseObj);
 
       if($result > 0){
           $_SESSION["message"] = "Course details updated successfully for Course ID $course_id !";

@@ -1,7 +1,6 @@
 <?php
 // DTO - Data Transaction Object
 // to transport data amoung layers
-//echo getcwd();
 class StudentCourse{
 
 public $student_course_id;
