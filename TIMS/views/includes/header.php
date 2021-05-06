@@ -44,7 +44,8 @@
           transition: all 0.5s;
           cursor: pointer;
           margin: 5px;
-          margin-left:75%;
+          /*margin-left:75%;*/
+          margin-right:2em;
         }
 
         .button span {
@@ -74,9 +75,21 @@
 
         hh {
           font-size: 30px;
-          margin-right: 55%;
-          padding-right: 300px;
-          left: 60%;
+        }
+        input {
+          position: relative;
+        }
+        
+        .none {
+          display: none;
+        }
+        
+        #num {
+          width: 3em;
+        }
+        
+        fieldset {
+          margin-left: 2em;
         }
 </style>
 
