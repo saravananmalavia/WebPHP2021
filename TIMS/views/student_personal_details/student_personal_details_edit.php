@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="user_id">Student ID:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 							<input type="number" 
 							       class="form-control"
 							       id="student_id"
@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="student_name">Student Name:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 
 							<input  type="text" 
 							        class="form-control" 
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="address">Address:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 							
 							<input  type="text" 
 							        class="form-control" 
@@ -195,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class = "form-group">
 						   <label  class="control-label col-sm-2" for="gender">Gender:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 
 						    <label>  <input type = "radio" name = "gender" <?php if (isset($gender) && $gender=="male")echo "checked";?> value = "male"> Male </label>			
 						    <label>  <input type = "radio" name = "gender" <?php if (isset($gender) && $gender=="female")echo "checked";?> value = "female"> Female </label>
@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="email">Email:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 
 							<input  type="text" 
 							        class="form-control" 
@@ -224,7 +224,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="mobile">Mobile:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 
 						    <input  type="number" 
 							        class="form-control" 
@@ -240,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="education">Education:</label>
-						<div  class="col-sm-10">
+						<div  class="col-sm-8">
 							<select  class="default" id="education" name="education">
 
 								<?php
