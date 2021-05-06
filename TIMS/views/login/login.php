@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
                 else{
-                    $message = "Wrong uer name or password";
+                    $message = "Wrong user name or password";
                 }
             }
             else{

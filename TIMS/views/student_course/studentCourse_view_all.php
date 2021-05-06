@@ -5,12 +5,15 @@
     require_once( ROOT_DIR.'/../model/studentCourseClass.php' );    
     require_once( ROOT_DIR.'/../service/studentCourseService.php' );
 
-    include('../includes/header.php')
+    include('../includes/header.php');
+    // ROOT_DIR.'/../views/includes/menu.php'
 ?>
+
             <td style="padding:20px; background-color:#f2f2f2; vertical-align:top;">
                 
                 <hh>Student Course Information</hh>
-                <a href="studentcourse_create.php"; ><button class=button><span>Add New</span></button></a>
+
+                <a href="studentcourse_create.php"; ><button class=button><span >Add New</span></button></a>
                 
                 <p style="color:red;" > <?php echo $message; ?></p>
                 <table class="table">

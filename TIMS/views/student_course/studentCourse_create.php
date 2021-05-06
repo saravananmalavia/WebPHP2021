@@ -124,7 +124,7 @@ if($error == true ){
             </td>
 
             <td style="padding:20px; background-color:#f2f2f2; vertical-align:top;">
-                <h2>New Student Course Creation </h2>
+                <h2>New Student Course Registration </h2>
                 <p style="color:red;" > <?php echo $message; ?></p>
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
 
