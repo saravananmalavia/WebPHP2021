@@ -90,7 +90,7 @@ function getStudentCourses(){
 
 // get student id
 function getStudentID1(){
-	$sql = "select student_id from student_personal_details order by student_id";
+	$sql = "select student_id from tblstudent_personal_details order by student_id";
 	$result = DBConnection::execQery($sql);
 	return $result;
 }
