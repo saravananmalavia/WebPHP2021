@@ -46,6 +46,7 @@
           margin: 5px;
           /*margin-left:75%;*/
           margin-right:2em;
+          float: right;
         }
 
         .button span {
