@@ -1,8 +1,11 @@
 <?php 
 session_start();
 
-    require_once 'User.class.php';
-    require_once 'UserService.php';
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../model/User.class.php' );    
+    require_once( ROOT_DIR.'/../service/userService.php' );
+    //require_once 'User.class.php';
+    //require_once 'UserService.php';
 
 $message ="";
 $errUserName = $errPassword = $errUserType = "";
@@ -117,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <tr  style="height:270px;">
         <td  style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
           <ul  style="list-style:none; padding:0px; line-height:24px;">
-            <?php require_once 'menu.php' ?>
+            <?php require_once ( ROOT_DIR.'/../views/includes/menu.php' ); ?>
           </ul>
         </td>   
             

@@ -1,6 +1,10 @@
 <?php
-require_once 'studentDetails.class.php';
-require_once 'DBConnection.class.php';
+
+ require_once '../../config/config.php';
+ require_once( ROOT_DIR.'/../db/DBConnection.class.php' );  
+ require_once( ROOT_DIR.'/../model/studentDetails.class.php' );
+ //require_once 'studentDetails.class.php';
+ //require_once 'DBConnection.class.php';
 
 class StudentService{
 

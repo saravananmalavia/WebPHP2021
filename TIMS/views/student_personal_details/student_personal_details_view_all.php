@@ -1,8 +1,11 @@
 <?php
 session_start();
     
-    require_once 'studentDetails.class.php';
-    require_once 'studentService.php';
+    require_once '../../config/config.php';
+    require_once( ROOT_DIR.'/../model/studentDetails.class.php' );
+    require_once( ROOT_DIR.'/../service/studentService.php' );
+    //require_once 'studentDetails.class.php';
+    //require_once 'studentService.php';
 
     if(isset($_SESSION["message"])){
     	$message = $_SESSION["message"];
@@ -26,6 +29,55 @@ session_start();
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+    .button {
+          border-radius: 4px;
+          background-color: #008000;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 15px;
+          padding: 5px;
+          width: 115px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+          margin-left:75%;
+        }
+
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 15px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+        hh {
+          font-size: 30px;
+          margin-right: 55%;
+          padding-right: 300px;
+          left: 60%;
+        }
+</style>
+
 <body  style="margin:0px;">
 	<table  style="width:100%; border-collapse:collapse; font:14px Arial,sans-serif;">
 		<tr>
@@ -37,12 +89,13 @@ session_start();
 		<tr  style="height:270px;">
 			<td  style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
 				<ul  style="list-style:none; padding:0px; line-height:24px;">
-					<?php require_once 'menu.php' ?>
+					<?php require_once ( ROOT_DIR.'/../views/includes/menu.php' ); ?>
 				</ul>
 			</td>
 
 			<td  style="padding:20px; background-color:#f2f2f2; vertical-align:top;">
 				<h2>Student Personal Information </h2>
+                <a href="student_personal_details_create.php"; ><button class=button><span>Add New</span></button></a>
 				<p  style="color:red;" > <?php echo $message; ?></p>
 
 				<table  class="table">
