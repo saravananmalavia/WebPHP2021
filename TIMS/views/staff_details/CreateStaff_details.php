@@ -11,8 +11,7 @@ $staff_name = $address = $gender = $email= $mobile=$education = $subject = $resu
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  echo "i am in post <br>";
-
+ 
 $staff_name = $_POST['staff_name'];
 $address = $_POST['address'];
 $gender = $_POST['gender'];
@@ -20,6 +19,8 @@ $email = $_POST['email'];
 $mobile = $_POST['mobile'];
 $education = $_POST['education'];
 $subject = $_POST['subject'];
+
+echo "$mobile";
 
 
 if(empty($staff_name)){
@@ -47,15 +48,15 @@ else {
       $error = true;
     }
   }
-  if(empty($mobile)){
+  if(!isset($mobile)){
   $errmobileno = " Mobile No should not be empty";
   $error = true;
 }else{
   if (filter_var($mobile, FILTER_VALIDATE_INT)) {
-    if (strlen($mobile) !=10 ){
-      $errmobileno = "Mobile No must be Ten Digit long";
-      $error = true;
-    }
+    // if (strlen($mobile) !=10 ){
+    //   $errmobileno = "Mobile No must be Ten Digit long";
+    //   $error = true;
+    // }
   }else{
     $errmobileno ="Mobile No should be an Intger";
     $error = true;
