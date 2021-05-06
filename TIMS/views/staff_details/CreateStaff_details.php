@@ -1,6 +1,6 @@
 <?php
 session_start();
-   require_once '../../config/config.php';
+    require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/staffClass.php' );    
     require_once( ROOT_DIR.'/../service/staffService.php' );
 
@@ -156,7 +156,7 @@ if($error == true ){
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
                    <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
-                   <!--<?php //require_once '../../include/menu.php' ?> -->
+                  
                 </ul>
             </td>
 
@@ -166,7 +166,7 @@ if($error == true ){
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="staff_name">Staff Name:</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <input type="text" class="form-control" id="staff_name" placeholder="Enter staff name " name="staff_name"
                     value='<?php echo "$staff_name" ;?>'
                     >
@@ -176,7 +176,7 @@ if($error == true ){
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="address">Address:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="text" class="form-control" id="address" placeholder="Enter address" name="address"
                     value='<?php echo "$address" ;?>'
                     >
@@ -187,7 +187,7 @@ if($error == true ){
 
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="gender">Gender:</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                         
                     <input type="radio" name = "gender" 
                    <?php if (isset($gender) && $gender=="female")echo "checked";?> value="female">Female
@@ -201,7 +201,7 @@ if($error == true ){
 
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="email">Email:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" value='<?php echo "$email" ;?>'>
                     <span id="email" style="color:red; font-size: 8px;"><?php echo "$erremailid" ;?>
                       </span>
@@ -209,7 +209,7 @@ if($error == true ){
                 </div>
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="mobile">Mobile:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="number" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" value='<?php echo "$mobile" ;?>'>
                     <span id="mobile" style="color:red; font-size: 8px;
                                                  "><?php echo "$errmobileno" ;?></span>
@@ -217,7 +217,7 @@ if($error == true ){
                 </div>
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="education">Education:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
               <select  class="default" id="education" name="education">
                 <option value="" selected>Select one...</option>
                                 <option value="UG">UG</option>
@@ -231,7 +231,7 @@ if($error == true ){
                 </div>
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="subject">Subject:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
               <select  class="default" id="subject" name="subject">
                 <option value="" selected>Select one...</option>
                                 <option value="PHP">PHP</option>
@@ -243,14 +243,8 @@ if($error == true ){
                                                  "><?php echo "$errSubject" ;?></span>
                   </div>
                 </div>
-
-
-
-
-
-
                 <div class="form-group">        
-                  <div class="col-sm-offset-2 col-sm-10">
+                  <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-default">Submit</button>
                   </div>
                 </div>

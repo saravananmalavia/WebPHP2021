@@ -93,12 +93,7 @@ else{
        $exam_date = $row["exam_date"];
        $exam_time = $row["exam_time"];
        $remarks = $row["remarks"];
-       // echo $exam_time_table_id ."<br>";
-       // echo $subject_name."<br>" ;
-       // echo $exam_date."<br>" ;
-       // echo $exam_time."<br>";
-       // echo $remarks."<br>" ;
-
+       
       }
    }
 }
@@ -158,7 +153,7 @@ else{
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
               <div class="form-group">
                   <label class="control-label col-sm-2" for="exam_time_table_id">Exam ID :</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="int" class="form-control" id="exam_time_table_id" placeholder="Enter exam_id" name="exam_time_table_id"
                     value='<?php echo $exam_time_table_id ;?>'readonly ="true" 
                     >
@@ -169,7 +164,7 @@ else{
 
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="subject_name">Subject Name:</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
                     <select  class="default" id="subject_name" name="subject_name">
                         <?php
                       if($subject_name === 'JAVA')
@@ -206,7 +201,7 @@ else{
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="exam_date">Exam Date :</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="date" class="form-control" id="exam_date" placeholder="Enter exam_date" name="exam_date"
                     value='<?php echo $exam_date ;?>'
                     >
@@ -217,9 +212,9 @@ else{
 
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="exam_time">Exam Time:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="time" class="form-control" id="exam_time" placeholder="Enter exam_time" name="exam_time" value='<?php  $date = date("H:i", strtotime($exam_time)); echo "$date";?>'>
-                    <!-- svalue="<?php $date = date("H:i", strtotime($row['time_d'])); echo "$date"; ?>" -->
+                   
                     <span id="exam_time" style="color:red; font-size: 8px;
                                                  "><?php echo "$errtime" ;?>
                                                  </span>
@@ -228,7 +223,7 @@ else{
 
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="remarks">Remarks:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="text" class="form-control" id="remarks" placeholder="Enter remarks" name="remarks" value='<?php echo "$remarks" ;?>'>
                     <span id="remarks" style="color:red; font-size: 8px;"><?php echo "$errremarks" ;?></span>
                   </div>
@@ -237,7 +232,7 @@ else{
 
 
                 <div class="form-group">        
-                  <div class="col-sm-offset-2 col-sm-10">
+                  <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-default">update</button>
                   </div>
                 </div>

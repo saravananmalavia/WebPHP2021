@@ -1,16 +1,13 @@
  <?php
 require_once '../../config/config.php';
 require_once( ROOT_DIR.'/../db/DBConnection.class.php' );  
-    require_once( ROOT_DIR.'/../model/examClass.php' );
-//require_once '../../db/DBConnection.class.php';
-
+require_once( ROOT_DIR.'/../model/examClass.php' );
 
 class ExamService{
 
 // insert the staff record
 function addDetails(Exam $exam){
 
-	  //$roll_no = $student->setRollNo();
 	  $subject_name  = $exam->getSubjectName();
 	  $exam_date = $exam->getExamDate();
 	  $exam_time = $exam->getExamTime();
@@ -73,9 +70,6 @@ function getExams(){
 	return $result;
 }
 
-
-
 }
-
 
 ?>

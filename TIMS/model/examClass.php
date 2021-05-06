@@ -14,17 +14,7 @@ function __construct() {
    
     }
 
- // function __construct($roll_no,$student_name,$mark1,$mark2,$mark3,$total=null,$result=null) {
- //    $this->roll_no = $roll_no;
- //    $this->student_name = $student_name;
- //    $this->mark1 = $mark1;
- //    $this->mark2 = $mark2;
- //    $this->mark3 = $mark3;
- //    $this->total = $total;
- //    $this->result = $result;
-
- //  }
-
+ 
   function setSubjectName($subject_name) {
    		$this->subject_name = $subject_name ;
   }
@@ -59,12 +49,6 @@ function __construct() {
   function getRemarks() {
     return $this->remarks;
   }
-
-
 }
-
-
-
-
 
 ?> 

@@ -2,15 +2,12 @@
 require_once '../../config/config.php';
 require_once( ROOT_DIR.'/../db/DBConnection.class.php' );  
 require_once( ROOT_DIR.'/../model/staffClass.php' );
-//require_once '../../db/DBConnection.class.php';
-
 
 class StaffService{
 
 // insert the student record
 function addStaff(Staff $staff){
 
-	  //$roll_no = $student->setRollNo();
 	  $staff_name  = $staff->getStaffName();
 	  $address = $staff->getAddress();
 	  $gender = $staff->getGender();
@@ -78,9 +75,6 @@ function getStaffs(){
 	return $result;
 }
 
-
-
 }
-
 
 ?>

@@ -1,22 +1,8 @@
 <?php
 session_start();
-//require_once 'DBconnectionclass.php';
 require_once '../../config/config.php';
 require_once( ROOT_DIR.'/../model/examClass.php' );
 require_once( ROOT_DIR.'/../service/examService.php');
-//echo"ok";
-    //require_once '../../student/Student.class.php';
-    //require_once 'examClass.php';
-   // echo"class";
-    //require_once '../../student/StudentService.php';
-    //require_once 'examService.php';
-   // echo"service";
-
-
-
-    // require_once '../../config/config.php';
-    // require_once( ROOT_DIR.'/../model/courseClass.php' );    
-    // require_once( ROOT_DIR.'/../service/courseService.php' );
 
 $message ="";
 $errSubjectName = $errdate = $errtime = $errremarks
@@ -60,7 +46,6 @@ if($error == true ){
 
     $examObj = new Exam();
 
-    //$studentObj->setRollNo($roll_no);
     $examObj->setSubjectName($subject_name);
     $examObj->setExamDate($exam_date);
     $examObj->setExamTime($exam_time);
@@ -79,11 +64,6 @@ if($error == true ){
      header("Location: exam_View_All.php");
 
     }
-
-
-
-
-
 }
 ?>
 
@@ -133,7 +113,7 @@ if($error == true ){
            
             <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
                 <ul style="list-style:none; padding:0px; line-height:24px;">
-                  <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>                   <!--<?php //require_once '../../include/menu.php' ?> -->
+                  <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>                
                 </ul>
             </td>
 
@@ -143,7 +123,7 @@ if($error == true ){
             <form class="form-horizontal" method="post" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' >
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="subject_name">Subject Name:</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-4">
               <select  class="default" id="subject_name" name="subject_name">
                 <option value="" selected>Select one...</option>
                                 <option value="PHP">PHP</option>
@@ -157,7 +137,7 @@ if($error == true ){
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="exam_date">Exam Date :</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="date" class="form-control" id="exam_date" placeholder="Enter exam_date" name="exam_date"
                     value='<?php echo "$exam_date" ;?>'
                     >
@@ -168,7 +148,7 @@ if($error == true ){
 
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="exam_time">Exam Time:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="time" class="form-control" id="exam_time" placeholder="Enter exam_time" name="exam_time" value='<?php echo "$exam_time" ;?>'>
                     <span id="exam_time" style="color:red; font-size: 8px;
                                                  "><?php echo "$errtime" ;?></span>
@@ -177,7 +157,7 @@ if($error == true ){
 
                 <div class="form-group">
                   <label class="control-label col-sm-2" for="remarks">Remarks:</label>
-                  <div class="col-sm-10">          
+                  <div class="col-sm-4">          
                     <input type="text" class="form-control" id="remarks" placeholder="Enter remarks" name="remarks" value='<?php echo "$remarks" ;?>'>
                     <span id="remarks" style="color:red; font-size: 8px;"><?php echo "$errremarks" ;?></span>
                   </div>
@@ -186,7 +166,7 @@ if($error == true ){
 
 
                 <div class="form-group">        
-                  <div class="col-sm-offset-2 col-sm-10">
+                  <div class="col-sm-offset-2 col-sm-4">
                     <button type="submit" class="btn btn-default">Submit</button>
                   </div>
                 </div>
