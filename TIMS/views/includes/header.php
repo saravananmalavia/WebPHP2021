@@ -77,7 +77,7 @@
         }
 
         hh {
-          font-size: 30px;
+          font-size: 28px;
         }
         input {
           position: relative;
@@ -101,6 +101,9 @@
 		<tr>
 			<td  colspan="3" style="padding:10px 20px; background-color:#acb3b9;">
 				<h1  style="font-size:24px;"> Keltron Knowledge Center</h1>
+        <div>
+        <?php include(ROOT_DIR.'/../views/includes/banner.php'); ?>
+        </div>
 			</td>
 		</tr>
 
