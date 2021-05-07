@@ -3,7 +3,10 @@ session_start();
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/staffClass.php' );    
     require_once( ROOT_DIR.'/../service/staffService.php' );
+    include('../includes/header_sub.php');
+?>
 
+<?php
 $message ="";
 $errStaffName = $errAddress = $errgender = $erremailid = $errmobileno = $errEducation = $errSubject = "";
 $staff_name = $address = $gender = $email= $mobile=$education = $subject = $result =  "";
@@ -69,12 +72,11 @@ if(empty($education)){
     $error = true;
 }
 if(empty($subject)){
-    $errSubject = "* Address should not be empty";
+    $errSubject = "* Subject should not be empty";
     $error = true;
 }
 
 if($error == true ){
-  echo "i am in error <br>";
     $message = "please fix the errors";
 
 }else{
@@ -110,56 +112,6 @@ if($error == true ){
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>KKC-Home</title>
-<link rel="stylesheet"
-      href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-     href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<style>
-    input {
-      position: relative;
-    }
-    
-    .none {
-      display: none;
-    }
-    
-    span {
-      color: red;
-      font-weight: 50;
-    }
-    
-    #num {
-      width: 3em;
-    }
-    
-    fieldset {
-      margin-left: 2em;
-    }
-  </style>
-
-</head>
-<body style="margin:0px;">
-    <table   style="width:100%; border-collapse:collapse; font:14px Arial,sans-serif;">
-        <tr>
-            <td colspan="3" style="padding:10px 20px; background-color:#acb3b9;">
-                <h1 style="font-size:24px;"> Keltron Knowledge Center</h1>
-            </td>
-        </tr>
-        <tr style="height:270px;">
-           
-            <td style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
-                <ul style="list-style:none; padding:0px; line-height:24px;">
-                   <?php require_once( ROOT_DIR.'/../views/includes/menu.php' ); ?>
-                  
-                </ul>
-            </td>
 
             <td style="padding:20px; background-color:#f2f2f2; vertical-align:top;">
                 <h2>New Staff Creation </h2>
@@ -219,7 +171,7 @@ if($error == true ){
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="education">Education:</label>
                   <div class="col-sm-4">          
-              <select  class="default" id="education" name="education">
+              <select  class="form-control" id="education" name="education">
                 <option value="" selected>Select one...</option>
                                 <option value="UG">UG</option>
                                 <option value="PG">PG</option>
@@ -233,7 +185,7 @@ if($error == true ){
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="subject">Subject:</label>
                   <div class="col-sm-4">          
-              <select  class="default" id="subject" name="subject">
+              <select  class="form-control" id="subject" name="subject">
                 <option value="" selected>Select one...</option>
                                 <option value="PHP">PHP</option>
                                 <option value="PYTHON">PYTHON</option>

@@ -6,7 +6,7 @@ class DBConnection{
 	
     public static $servername = "localhost";
 	public static $username = "root";
-	public static $password = "root";
+	public static $password = "";
 	public static $dbase = "KeltronDB";
 
 	static function  getConnect(){
