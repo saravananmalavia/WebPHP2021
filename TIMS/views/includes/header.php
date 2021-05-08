@@ -7,14 +7,12 @@
 ?>
 <?php
 
-
-
     if(isset($_SESSION['message'])){
     	$message = $_SESSION['message'];
         unset($_SESSION['message']);
     }
     else{
-    	 $message="";
+    	 $message=" ";
     }
 ?>
 
@@ -31,70 +29,10 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+    <link rel="stylesheet" href="../includes/mystyle.css">
 </head>
 
-<style>
-    .button {
-          border-radius: 4px;
-          background-color: #008000;
-          border: none;
-          color: #FFFFFF;
-          text-align: center;
-          font-size: 15px;
-          padding: 5px;
-          width: 115px;
-          transition: all 0.5s;
-          cursor: pointer;
-          margin: 5px;
-          /*margin-left:75%;*/
-          margin-right:2em;
-          float: right;
-        }
 
-        .button span {
-          cursor: pointer;
-          display: inline-block;
-          position: relative;
-          transition: 0.5s;
-        }
-
-        .button span:after {
-          content: '\00bb';
-          position: absolute;
-          opacity: 0;
-          top: 0;
-          right: -20px;
-          transition: 0.5s;
-        }
-
-        .button:hover span {
-          padding-right: 15px;
-        }
-
-        .button:hover span:after {
-          opacity: 1;
-          right: 0;
-        }
-
-        hh {
-          font-size: 28px;
-        }
-        input {
-          position: relative;
-        }
-        
-        .none {
-          display: none;
-        }
-        
-        #num {
-          width: 3em;
-        }
-        
-        fieldset {
-          margin-left: 2em;
-        }
-</style>
 
 <body  style="margin:0px;">
 	<table  style="width:100%; border-collapse:collapse; font:14px Arial,sans-serif;">
@@ -106,6 +44,16 @@
         </div>
 			</td>
 		</tr>
+
+      <tr>
+      <td  colspan="3" style="padding:10px 20px; background-color:#acb3b9;">
+        
+        <div>
+            <?php echo "Name : " . $_SESSION['user_name']; ?>
+            <?php echo "User Type  : " . $_SESSION['user_type']; ?>
+        </div>
+      </td>
+    </tr>
 
 		<tr  style="height:270px;">
 			<td  style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">

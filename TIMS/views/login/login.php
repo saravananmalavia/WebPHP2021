@@ -76,17 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             else{
                    $message = "Server busy, try again later";
             }
-
-
-
-
-        if($result > 0){
-          $_SESSION["message"] = "User details added successfully !";
-        }
-        else{
-          $_SESSION["message"] = "Server busy please try again later !";
-        }
-
       
   }
 
