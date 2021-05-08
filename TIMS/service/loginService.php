@@ -15,7 +15,7 @@ class LoginService{
 
         $sql  =  "SELECT * FROM tbluser_details WHERE user_name = '$user->user_name' and password = '$user->password'   ";
 
-        echo $sql;
+        //echo $sql;
         $result = DBConnection::execQery($sql);
         return $result;
 
@@ -26,7 +26,22 @@ class LoginService{
         }
 
     }
-    public  function changePassword(){
+    public  function changePassword(User $user){
+              try{
+
+        $sql  =  "update tbluser_details set
+                  password = '$user->password'
+                  where user_name = '$user->user_name' ";
+
+        //echo $sql;
+        $result = DBConnection::execQery($sql);
+        return $result;
+
+        }   
+        catch(Exception $e)
+        {
+             echo "$e";
+        }
 
     }
    public  function logOut(){
