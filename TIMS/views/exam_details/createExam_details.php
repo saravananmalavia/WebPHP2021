@@ -85,6 +85,7 @@ if($error == true ){
                                 <option value="PHP">PHP</option>
                                 <option value="JAVA">JAVA</option>
                                 <option value="PYTHON">PYTHON</option>
+                                <option  selected hidden style="display:none;"> <?php echo "$subject_name"; ?> </option>
               </select>
 
                     <span id="subject_name" style="color:red; font-size: 8px;

@@ -176,6 +176,7 @@ if($error == true ){
                                 <option value="UG">UG</option>
                                 <option value="PG">PG</option>
                                 <option value="PhD">PhD</option>
+                                <option  selected hidden style="display:none;"> <?php echo "$education"; ?> </option>
               </select>
 
                     <span id="education" style="color:red; font-size: 8px;
@@ -190,6 +191,7 @@ if($error == true ){
                                 <option value="PHP">PHP</option>
                                 <option value="PYTHON">PYTHON</option>
                                 <option value="JAVA">JAVA</option>
+                                <option  selected hidden style="display:none;"> <?php echo "$subject"; ?> </option>
               </select>
 
                     <span id="subject" style="color:red; font-size: 8px;

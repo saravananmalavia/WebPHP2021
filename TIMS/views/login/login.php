@@ -4,7 +4,6 @@ session_start();
     require_once( ROOT_DIR.'/../model/User.class.php' );    
     require_once( ROOT_DIR.'/../service/LoginService.php' );
 
-
 $message ="";
 $errUserName = $errPassword ="";
 $user_name = $password = "";
@@ -116,6 +115,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <tr>
             <td colspan="3" style="padding:10px 20px; background-color:#acb3b9;">
                 <h1 style="font-size:24px;"> Keltron Knowledge Center</h1>
+                <div>
+                    <?php include(ROOT_DIR.'/../views/includes/banner.php'); ?>
+                </div>
             </td>
         </tr>
         <tr style="height:270px;">
