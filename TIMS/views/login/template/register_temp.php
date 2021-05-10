@@ -21,22 +21,22 @@ session_start();
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="" class="form-control" value="" placeholder="Enter Username">
-                <span class="ErrUser_name">
-                    <?php //echo ; ?>                    
+                <span class="ErrNew_User_name">
+                    <?php echo $new_user_name; ?>                    
                 </span>
             </div>    
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" value="" placeholder="Enter Password">
-                <span class="ErrPassword">
-                    <?php //echo ; ?>
+                <span class="ErrSignup_Password">
+                    <?php echo $signup_password; ?>
                 </span>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="" placeholder="Confirm Password">
-                <span class="ErrPassword">
-                    <?php //echo ; ?>
+                <span class="Errconfirm_signup_Password">
+                    <?php echo $confirm_signup_password ; ?>
                 </span>
             </div>
             <div class="form-group">
