@@ -199,14 +199,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<div  class="form-group">
 						<label  class="control-label col-sm-2" for="education">Education:</label>
 						<div  class="col-sm-8">
-							<select  class="default" id="education" name="education">
-								<option value="" selected>Select one...</option>
+							<select  class="form-control" id="education" name="education">								
                                 <option value="UG">UG</option>
                                 <option value="PG">PG</option>
                                 <option value="PhD">PhD</option>
+                                <option selected hidden style="display:none;"> <?php echo "$education"; ?> </option>
 							</select>
 
-						 <span  id="e2" ><br/><?php echo "$errEducation" ;?></span>
+						 <span  id="e2" style="color:red; font-size: 8px;"><br/><?php echo "$errEducation" ;?></span>
 						</div>
 					</div>
                               <!--SUBMIT-->

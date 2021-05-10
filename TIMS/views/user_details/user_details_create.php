@@ -126,9 +126,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div  class = "form-group">
                <label  class="control-label col-sm-2" for="user_type">User Type:</label>
             <div  class="col-sm-8">
-               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="male")echo "checked";?> value = "student"> Student </label>        
-               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="male")echo "checked";?> value = "staff"> Staff </label>
-               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="male")echo "checked";?> value = "admin"> Admin </label>
+               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="student")echo "checked";?> value = "student"> Student </label>        
+               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="staff")echo "checked";?> value = "staff"> Staff </label>
+               <label>  <input type = "radio" name = "user_type" <?php if (isset($user_type) && $user_type=="admin")echo "checked";?> value = "admin"> Admin </label>
 
                           <span  id="e2" ><br/><?php echo "$errUserType" ;?></span>
             </div>        
