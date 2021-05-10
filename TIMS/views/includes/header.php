@@ -58,6 +58,18 @@
 		<tr  style="height:270px;">
 			<td  style="width:12%; padding:10px 10px; background-color:#d4d7dc; vertical-align: top;">
 				<ul  style="list-style:none; padding:0px; line-height:24px;">
-					<?php require_once ( ROOT_DIR.'/../views/includes/menu.php' ); ?>
+					<?php 
+
+          if($_SESSION['user_type'] == 'student' ){
+            require_once ( ROOT_DIR.'/../views/includes/menu_student.php' ); 
+          }else {
+             require_once ( ROOT_DIR.'/../views/includes/menu_staff.php' );
+
+          } 
+
+
+      
+
+          ?>
 				</ul>
 			</td>
