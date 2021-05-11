@@ -4,6 +4,7 @@ session_start();
     require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/fees.class.php' );    
     require_once( ROOT_DIR.'/../service/FeesService.php' );
+    include('../includes/header_sub.php');
 
 // Create connection
 
