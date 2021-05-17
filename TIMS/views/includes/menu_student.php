@@ -8,5 +8,7 @@
                     <li><a href="../student_personal_details/student_personal_details_view_all.php" style="color:#333;">Student Details</a></li>
                     <li><a href="../exam_details/exam_View_All.php" style="color:#333;">Exam</a></li>
                     <li><a href="../staff_details/staff_View_All.php" style="color:#333;">Staff</a></li>
+                    <li><a href="../attendance_details/attendance_view_all.php" style="color:#333;">Attendance</a></li>
+                     <li><a href="../fees_details/fees_view_all.php" style="color:#333;">Fees</a></li>
                     
                 </ul>
