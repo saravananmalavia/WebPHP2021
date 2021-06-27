@@ -6,9 +6,10 @@ session_start();
 // require_once 'AttendanceService.php';
 // require_once 'attendance.class.php';
 
-require_once '../../config/config.php';
+    require_once '../../config/config.php';
     require_once( ROOT_DIR.'/../model/attendance.class.php' );    
     require_once( ROOT_DIR.'/../service/AttendanceService.php' );
+    include('../includes/header_sub.php');
 
 
 $message ="";

@@ -10,6 +10,9 @@
                     <li><a href="../staff_details/staff_View_All.php" style="color:#333;">Staff</a></li>
 
                      <li><a href="../user_details/user_details_view_all.php" style="color:#333;">User</a></li>
+                     <li><a href="../attendance_details/attendance_view_all.php" style="color:#333;">Attendance</a></li>
+                     <li><a href="../fees_details/fees_view_all.php" style="color:#333;">Fees</a></li>
+                     
 
                     
                 </ul>
