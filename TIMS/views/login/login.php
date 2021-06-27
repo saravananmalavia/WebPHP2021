@@ -55,11 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result->num_rows > 0) {
                     if($row = $result->fetch_assoc()) {
 
-                        echo  $row['user_id']. "<br>";
-                        echo  $row['user_name']. "<br>";
-                        echo  $row['password']. "<br>";
-                        echo  $row['user_type']. "<br>";
-
                         $_SESSION['user_id'] = $row['user_id'];
                         $_SESSION['user_name'] = $row['user_name'];
                         $_SESSION['user_type'] = $row['user_type'];
